@@ -1,0 +1,78 @@
+{
+  "name": "@damlys/tsdock",
+  "version": "0.0.0",
+  "description": "TypeScript starter for Node.js projects.",
+  "keywords": [],
+  "author": "Damian Łysiak",
+  "contributors": [],
+  "license": "UNLICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/damlys/tsdock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damlys/tsdock/issues"
+  },
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "tsdock": "dist/bin/main.js"
+  },
+  "engines": {
+    "node": ">=16.13.0 <17"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.12",
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@damlys/standard-version-updater-docker": "^1.0.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "enable-git-hooks": "husky install",
+    "build": "rimraf ./dist && tsc",
+    "ts:exec": "ts-node ./src/bin/main.ts",
+    "ts:repl": "ts-node-dev ./src/bin/main.ts",
+    "js:exec": "node ./dist/bin/main.js",
+    "js:repl": "nodemon ./dist/bin/main.js",
+    "js:debug": "node --inspect='0.0.0.0:9229' ./dist/bin/main.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint .",
+    "test": "jest --verbose",
+    "test:coverage": "rimraf ./coverage && jest --coverage",
+    "test:watch": "jest --watchAll",
+    "test:unit": "jest ./tests/unit",
+    "test:system": "jest ./tests/system",
+    "bump-version": "standard-version --skip.changelog --skip.commit --skip.tag",
+    "release": "standard-version"
+  }
+}

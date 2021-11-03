@@ -1,0 +1,7 @@
+services:
+  http_server:
+    ports:
+      - mode: host
+        target: 8080
+        published: 38080
+        protocol: tcp

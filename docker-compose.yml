@@ -1,0 +1,13 @@
+services:
+  http_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GITHUB_TOKEN: "${GITHUB_TOKEN}"
+        NPM_TOKEN: "${NPM_TOKEN}"
+    image: ghcr.io/damlys/tsdock:${VERSION:-0.0.0}
+    environment:
+      HTTP_API_TESTS_ENTRYPOINT: http://http_server:8080
+    command:
+      - run-http-server

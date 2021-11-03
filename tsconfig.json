@@ -1,0 +1,19 @@
+{
+  "include": ["./src/index.ts", "./src/bin/main.ts"],
+  "exclude": ["./node_modules", "./**/*.test.*", "./**/*.spec.*"],
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2020"],
+    "target": "ES2020",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  }
+}

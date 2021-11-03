@@ -1,0 +1,59 @@
+#############################
+### System
+#############################
+
+*.bak
+*.swp
+*.tmp
+*~
+.DS_Store
+desktop.ini
+thumbs.db
+
+#############################
+### VCS
+#############################
+
+.git
+.gitignore
+.gitkeep
+
+#############################
+### IDE
+#############################
+
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+.editorconfig
+.idea
+.vscode
+
+#############################
+### Docker
+#############################
+
+.dockerignore
+Dockerfile
+docker-compose.*.yml
+docker-compose.yml
+
+#############################
+### Node.js
+#############################
+
+/node_modules
+/npm-debug.log
+
+#############################
+### Project
+#############################
+
+/.devcontainer
+/.github
+/.husky
+/CHANGELOG.md
+/LICENSE.md
+/README.md
+/coverage
+/dist
