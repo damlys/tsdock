@@ -3,7 +3,7 @@ FROM node:16.13-slim AS builder
 ARG GITHUB_TOKEN
 ARG NPM_TOKEN
 ENV NODE_ENV="development"
-ENV VERSION="0.0.0"
+ENV VERSION="0.0.1"
 COPY ./.npmrc ./package.json ./package-lock.json /app/
 WORKDIR /app
 RUN npm ci \
@@ -18,7 +18,7 @@ FROM node:16.13-slim
 ARG GITHUB_TOKEN
 ARG NPM_TOKEN
 ENV NODE_ENV="production"
-ENV VERSION="0.0.0"
+ENV VERSION="0.0.1"
 COPY ./.npmrc ./package.json ./package-lock.json /app/
 WORKDIR /app
 RUN npm ci \
