@@ -1,4 +1,4 @@
-FROM node:16.13-slim AS builder
+FROM node:18.4-slim AS builder
 
 ARG GITHUB_TOKEN
 ARG NPM_TOKEN
@@ -13,7 +13,7 @@ COPY . .
 RUN npm run build
 
 
-FROM node:16.13-slim
+FROM node:18.4-slim
 
 ARG GITHUB_TOKEN
 ARG NPM_TOKEN
@@ -32,4 +32,4 @@ CMD ["help"]
 # node:x:1000:1000::/home/node:/bin/bash
 # $ cat /etc/group | grep 'node'
 # node:x:1000:
-USER 1000
+USER 1000:1000

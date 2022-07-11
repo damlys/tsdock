@@ -8,19 +8,13 @@ Development machine:
 
 ```shell
 $ node --version
-v16.13.0
-
+v18.4.0
 $ npm --version
-8.1.0
-
+8.13.2
 $ docker --version
-Docker version 20.10.8, build 3967b7d
-
+Docker version 20.10.17, build 100c701
 $ docker-compose --version
-Docker Compose version v2.0.0
-
-$ git --version
-git version 2.30.1
+Docker Compose version v2.6.1
 ```
 
 Access to registries:

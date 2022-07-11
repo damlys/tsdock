@@ -1,4 +1,4 @@
-name: continuous-deployment
+name: workflow0
 on:
   push:
     branches:
@@ -13,7 +13,7 @@ on:
       - "!**.md"
 jobs:
   job0:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
@@ -26,11 +26,11 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
       - name: Clone Git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "16.13"
+          node-version: "18.4"
           cache: "npm"
 
       - name: Run NPM vulnerability scanning
@@ -45,7 +45,7 @@ jobs:
         name: Bump version (release)
         run: npm run release
 
-      - name: Build application
+      - name: Run build test
         run: npm run build -- --noEmit
       - name: Run code format check
         run: npm run format:check
