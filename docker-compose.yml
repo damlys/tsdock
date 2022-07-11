@@ -6,7 +6,7 @@ services:
       args:
         GITHUB_TOKEN: "${GITHUB_TOKEN}"
         NPM_TOKEN: "${NPM_TOKEN}"
-    image: ghcr.io/damlys/tsdock:${VERSION:-0.0.1}
+    image: ghcr.io/damlys/tsdock:${VERSION:-0.0.2}
     environment:
       HTTP_API_TESTS_ENTRYPOINT: http://http_server:8080
     command:
